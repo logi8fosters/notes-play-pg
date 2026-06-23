@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MK体育 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f5f1;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #2e2b27;
+            line-height: 1.7;
+            letter-spacing: 0.01em;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(135deg, #0f0e0c 0%, #2b2722 100%);
+            padding: 4rem 2rem 3.2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #d4a15a, #b98a4b, #d4a15a);
+            opacity: 0.7;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            color: #edeae4;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #cbb99b;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            margin-top: 0.3rem;
+            border-top: 1px solid rgba(215, 190, 155, 0.25);
+            display: inline-block;
+            padding-top: 0.6rem;
+        }
+
+        /* 浅色正文区 */
+        .content {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4.5rem;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            color: #3d3833;
+            margin-bottom: 2.5rem;
+            border-left: 3px solid #d4a15a;
+            padding-left: 1.5rem;
+            font-weight: 400;
+        }
+
+        .intro strong {
+            color: #1f1c18;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #2b2722;
+            margin: 2.8rem 0 1.2rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e2d6c8;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 2rem;
+            margin: 1.8rem 0;
+        }
+
+        .feature-list li {
+            background: #fefcf9;
+            border: 1px solid #e6ddd1;
+            border-radius: 12px;
+            padding: 1.2rem 1.4rem;
+            font-size: 1rem;
+            color: #3a3530;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: box-shadow 0.2s;
+            position: relative;
+        }
+
+        .feature-list li:hover {
+            box-shadow: 0 4px 12px rgba(180, 140, 90, 0.08);
+            border-color: #d4b68a;
+        }
+
+        .feature-list li::before {
+            content: '·';
+            color: #b98a4b;
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        .highlight-box {
+            background: #f2ede7;
+            border-radius: 16px;
+            padding: 2rem 2.2rem;
+            margin: 2.8rem 0;
+            border-left: 4px solid #b98a4b;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0.8rem;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .link-em {
+            color: #b47c3c;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1px dotted #b47c3c;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .link-em:hover {
+            color: #8e642e;
+            border-bottom: 1px solid #8e642e;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eae2d9;
+            padding: 1.2rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #2b2722;
+            margin-bottom: 0.2rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-a {
+            color: #55504a;
+            font-size: 0.98rem;
+        }
+
+        .closing {
+            margin-top: 3.5rem;
+            padding: 1.8rem 0 0.8rem;
+            color: #5c554e;
+            border-top: 1px solid #e2d6c8;
+            font-size: 1rem;
+        }
+
+        .closing p {
+            margin-bottom: 0.5rem;
+        }
+
+        .closing .signature {
+            font-style: italic;
+            color: #8c7e6e;
+            margin-top: 0.8rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3rem 1.5rem 2.4rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .tagline {
+                font-size: 0.95rem;
+                letter-spacing: 0.1em;
+            }
+            .content {
+                padding: 2rem 1.2rem 3.5rem;
+            }
+            .intro {
+                font-size: 1.05rem;
+                padding-left: 1rem;
+            }
+            .feature-list {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+            .highlight-box {
+                padding: 1.5rem 1.2rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero .tagline {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>MK体育</h1>
+        <div class="tagline">简明指南 · 日常访问</div>
+    </section>
+
+    <main class="content">
+
+        <p class="intro">
+            <strong>每次打开，都是一次熟悉的开始。</strong> 无论你是第一次接触，还是已经习惯它的界面，
+            <a href="https://mobilechina-mk.com" class="link-em">MK体育</a> 都提供了一种直接、不啰嗦的方式，让你快速进入状态。
+            这里没有花哨的引导，只有你需要的核心。
+        </p>
+
+        <h2 class="section-title">它长什么样？</h2>
+        <p>界面干净，按钮位置稳定，配色偏深色与暖金点缀。不需要反复学习，每次访问都像回到同一个熟悉的房间。整个体验围绕“直接”展开——打开页面，找到你想要的，然后离开去做其他事。</p>
+
+        <h2 class="section-title">几个值得注意的特点</h2>
+        <ul class="feature-list">
+            <li>加载节奏平顺，不拖泥带水</li>
+            <li>导航逻辑始终如一，减少重复判断</li>
+            <li>移动端适配自然，横竖屏都能用</li>
+            <li>信息排列克制，不堆砌无关内容</li>
+            <li>链接与按钮有明确反馈，点击感清晰</li>
+            <li>整体风格稳重，没有过度的视觉噪音</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>一点提醒：</strong> 如果你习惯用手机浏览器访问，建议将站点添加到主屏幕。这样每次打开时体验更接近原生应用，也省去输入地址的步骤。</p>
+            <p>另外，不同的网络环境可能会影响加载速度，如果页面需要几秒钟来完整呈现，这通常是正常的。保持耐心，或者检查一下连接。</p>
+        </div>
+
+        <h2 class="section-title">常见疑问摘要</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">页面打不开或加载很慢怎么办？</div>
+            <div class="faq-a">可以先确认网络是否正常，有时切换Wi-Fi与移动数据就能解决。如果持续不行，可能是临时服务调整，稍后再试即可。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">需要用特定浏览器吗？</div>
+            <div class="faq-a">不需要。主流浏览器（Chrome、Safari、Edge、Firefox等）都能正常显示。如果遇到排版错位，尝试清除缓存或更新浏览器版本。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">内容会频繁变动吗？</div>
+            <div class="faq-a">核心框架是稳定的，偶尔会有小范围的更新。如果你发现页面布局和以往不同，通常是优化调整，不必担心。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">有没有必要注册或登录？</div>
+            <div class="faq-a">这取决于你想要使用的具体功能。部分内容可直接浏览，某些区块可能需要简单验证。一切以页面上的实际提示为准。</div>
+        </div>
+
+        <div class="closing">
+            <p>上面提到的这些，其实都不是什么复杂的规则。它们更像是你使用任何网站时都会自然遇到的小习惯。记住一句话：</p>
+            <p>第一次可能需要摸索，但从第二次起，一切都开始变得顺手。</p>
+            <p><a href="https://mobilechina-mk.com" class="link-em">MK体育</a> 就是这样一个地方——不打扰你，也不让你猜。</p>
+            <div class="signature">— 祝使用愉快</div>
+        </div>
+
+    </main>
+
+</body>
+</html>
